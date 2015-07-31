@@ -6952,10 +6952,36 @@ function formatE164(country, phone) {
         output = phoneUtil.format(number, PNF.E164);
         return output.toString();
     } catch (e) {
-        return phone
+        return phone;
     }
 }
 
+// -------------------------------------------------------------------------
+function formatValidateE164(country, phone) {
+    /*
+
+    Return the phone number in e164 format if valid
+
+  	country (String) 2 digit country code
+    phone (String) phone number to format
+
+    */
+
+    try {
+    		var phone = cleanPhone(phone);
+    		var phoneUtil = i18n.phonenumbers.PhoneNumberUtil.getInstance();
+    		var number = phoneUtil.parseAndKeepRawInput(phone, country);
+    		if(!phoneUtil.isValidNumber(number)) {
+            return false;
+    		}
+    		var PNF = i18n.phonenumbers.PhoneNumberFormat;
+    		var output = new goog.string.StringBuffer();
+    		output = phoneUtil.format(number, PNF.E164);
+    		return output.toString();
+    } catch (e) {
+        return false;
+    }
+}
 
 // -------------------------------------------------------------------------
 function formatInternational(country, phone) {
@@ -7336,6 +7362,7 @@ exports.countryForE164Number=countryForE164Number;
 exports.formatNumberForMobileDialing=formatNumberForMobileDialing;
 exports.isValidNumber=isValidNumber;
 exports.formatE164=formatE164;
+exports.formatValidateE164=formatValidateE164;
 exports.formatInternational=formatInternational;
 exports.formatLocal=formatLocal;
 exports.exampleLandlineNumber=exampleLandlineNumber;

@@ -31,8 +31,9 @@ All files for usage are in the /dist directory.
 | countryForE164Number         	| phoneNumber : string                       	| phoneFormat.countryForE164Number(validInternationalPhoneNumber);         	|   	|   	|
 | formatNumberForMobileDialing 	| countryCode : string, phoneNumber : string 	| phoneFormat.formatNumberForMobileDialing(countryCode, validPhoneNumber); 	|   	|   	|
 | isValidNumber                	| phoneNumber : string, countryCode : string 	| phoneFormat.isValidNumber(validPhoneNumber, countryCode);                	|   	|   	|
-| formatE164                   	| countryCode: string, phoneNumber : string  	| phoneFormat.formatE164(countryCode, validPhoneNumber);                   	|   	|   	|
-| formatInternational          	| countryCode : string, phoneNumber : string 	| phoneFormat.formatInternational(countryCode, validPhoneNumber);          	|   	|   	|
+| formatE164                   	| countryCode : string, phoneNumber : string  | phoneFormat.formatE164(countryCode, validPhoneNumber);                   	|   	|   	|
+| formatValidateE164           	| countryCode : string, phoneNumber : string  | phoneFormat.formatValidateE164(countryCode, validPhoneNumber);                   	|   	|   	|
+| formatInternational          	| countryCode : string, phoneNumber : string  | phoneFormat.formatInternational(countryCode, validPhoneNumber);          	|   	|   	|
 | formatLocal                  	| countryCode : string, phoneNumber : string 	| phoneFormat.formatLocal(countryCode, validPhoneNumber);                  	|   	|   	|
 | exampleLandlineNumber        	| countryCode : string                       	| phoneFormat.exampleLandlineNumber(countryCode);                          	|   	|   	|
 | exampleMobileNumber          	| countryCode : string                       	| phoneFormat.exampleMobileNumber(countryCode);                            	|   	|   	|
